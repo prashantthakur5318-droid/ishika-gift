@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinematic Valentine ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Intro -->
+<div id="intro">
+  <h1>For Someone Special ❤️</h1>
+</div>
+
+<div id="particles"></div>
+
+<!-- HERO -->
+<section class="hero reveal">
+  <h1 class="title">Happy Valentine’s Day Ishu ❤️</h1>
+  <p>Every moment with you is a dreamy memory come true ✨</p>
+
+  <audio id="bgMusic">
+    <source src="audio/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="playBtn">Play Music 🎵</button>
+</section>
+
+<!-- PHOTO FLIP CARDS -->
+<section class="reveal">
+  <h2>Dekho in Dono Champu Ko 📸</h2>
+
+  <div class="card-container">
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="front"><img src="images/photo1.jpeg" alt="Photo"></div>
+        <div class="back">my sunshine ❤️</div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="front"><img src="images/photo2.jpeg" alt="Photo"></div>
+        <div class="back">golu molu ✨</div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="front"><img src="images/photo3.jpeg" alt="Photo"></div>
+        <div class="back">never leaving your side darlin 💕</div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-inner">
+        <div class="front"><img src="images/photo4.jpeg" alt="Photo"></div>
+        <div class="back">kitti paru si hai tu 💕</div>
+      </div>
+    </div>
+
+<div class="flip-card">
+      <div class="flip-inner">
+        <div class="front"><img src="images/photo5.jpeg" alt="Photo"></div>
+        <div class="back">Forever Us 💕</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz reveal">
+  <h2>Love Quiz ❤️</h2>
+
+  <div class="quiz-box">
+    <p>What is our most special memory? ✨</p>
+    <input type="text" id="userAnswer" placeholder="Type your answer here...">
+    <button onclick="checkAnswer()">Submit 💌</button>
+    <p id="result"></p>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-box reveal">
+  <h2>Not so very special moment 🎥</h2>
+  <video controls>
+    <source src="video/video.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- FINAL MAGIC BUTTON -->
+<section class="reveal">
+  <button id="confettiBtn">Click for Magic ✨</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+/* =========================
+   IMPORT CURSIVE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+/* =========================
+   GLOBAL
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #ffdce5, #f7a8b8);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  transform: scale(0.95); /* makes overall page slightly smaller */
+  transform-origin: top center;
+  min-height: 100vh;
+}
+
+/* =========================
+   INTRO SCREEN
+========================= */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  z-index: 9999;
+
+  /* wait 2s, then fade */
+  animation: introFade 3s forwards;
+  animation-delay: 2s;
+}
+
+
+@keyframes introFade {
+  80% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* =========================
+   SECTION SPACING
+========================= */
+section {
+  padding: 55px 20px;
+}
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero .title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  color: #ff2d55;
+  margin-bottom: 12px;
+  text-shadow: 0 0 12px rgba(255,45,85,0.4);
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   BUTTONS (BIG + CINEMATIC)
+========================= */
+button {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.2rem;
+  border-radius: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   BIG ICONS / EMOJIS
+========================= */
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h2 span,
+button span {
+  font-size: 1.5em;
+}
+
+/* =========================
+   FLIP CARDS (LARGER)
+========================= */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.flip-card {
+  width: 280px;
+  height: 360px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 12px 22px rgba(0,0,0,0.25);
+}
+
+.front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.back {
+  background: white;
+  color: #ff2d55;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+/* =========================
+   QUIZ BOX (BIGGER BUT COMPACT)
+========================= */
+.quiz-box {
+  background: rgba(255,255,255,0.95);
+  max-width: 550px;
+  margin: auto;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+.quiz-box p {
+  font-size: 1.2rem;
+}
+
+.quiz-box input {
+  width: 90%;
+  padding: 12px;
+  font-size: 1rem;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* =========================
+   VIDEO
+========================= */
+video {
+  width: 80%;
+  max-width: 700px;
+  border-radius: 18px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   MAGIC HEART EFFECT
+========================= */
+/* =========================
+   MOVIE STYLE HEARTS
+========================= */
+.heart {
+  position: fixed;
+  font-size: 36px;
+  pointer-events: none;
+  animation: flyToText 2.5s ease forwards,
+             pulseLove 1.5s ease-in-out infinite 2.5s;
+  filter: drop-shadow(0 0 10px rgba(255,0,80,0.7));
+}
+
+/* Hearts fly into text shape */
+@keyframes flyToText {
+  from {
+    transform: scale(0.3) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    left: var(--targetX);
+    top: var(--targetY);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Gentle glowing pulse after assembling */
+@keyframes pulseLove {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+
+  body {
+    transform: scale(0.98);
+  }
+
+  .hero .title {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .flip-card {
+    width: 90%;
+    max-width: 280px;
+    height: 340px;
+  }
+
+  button {
+    width: 90%;
+    max-width: 280px;
+  }
+}
